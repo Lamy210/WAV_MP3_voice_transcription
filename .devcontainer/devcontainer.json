@@ -1,0 +1,18 @@
+{
+	"name": "Lamy_Python 3",
+	"remoteUser": "root",
+	"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+	"runArgs": [
+		"--env-file",
+		"./.env"
+	  ],
+	  "apt_sources": [
+		{
+		  "name": "mc3man/pocketsphinx-models",
+		  "url": "https://ppa.mc3man.de/pocketsphinx-models/ubuntu"
+		}
+	],	
+	"postAttachCommand": "/bin/bash ${containerWorkspaceFolder}/setup.sh", // コンテナ作成後に実行するコマンド
+	"postCreateCommand": "apt-get update && apt-get install -y ffmpeg"
+
+}
